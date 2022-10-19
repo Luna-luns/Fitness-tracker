@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union, List, Dict
 from dataclasses import dataclass
 
 
@@ -119,9 +119,9 @@ class Swimming(Training):
                 * self.weight * self.duration)
 
 
-def read_package(workout_type: str, data: list[Union[int, float]]) -> Training:
+def read_package(workout_type: str, data: List[Union[int, float]]) -> Training:
     """Прочитать данные полученные от датчиков."""
-    training_dictionary: dict[str, type(Training)] = {
+    training_dictionary: Dict[str, type(Training)] = {
         'SWM': Swimming,
         'RUN': Running,
         'WLK': SportsWalking}
