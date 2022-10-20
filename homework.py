@@ -13,10 +13,10 @@ class InfoMessage:
 
     def get_message(self) -> str:
         return (f'Тип тренировки: {self.training_type}; '
-                + f'Длительность: {self.duration:.3f} ч.; '
-                + f'Дистанция: {self.distance:.3f} км; '
-                + f'Ср. скорость: {self.speed:.3f} км/ч; '
-                + f'Потрачено ккал: {self.calories:.3f}.')
+                f'Длительность: {self.duration:.3f} ч.; '
+                f'Дистанция: {self.distance:.3f} км; '
+                f'Ср. скорость: {self.speed:.3f} км/ч; '
+                f'Потрачено ккал: {self.calories:.3f}.')
 
 
 class Training:
@@ -128,7 +128,7 @@ def read_package(workout_type: str, data: List[Union[int, float]]) -> Training:
     if workout_type in training_dictionary:
         return training_dictionary[workout_type](*data)
     else:
-        raise Exception('Key does not exist')
+        raise KeyError('Key does not exist')
 
 
 def main(training: Training) -> None:
